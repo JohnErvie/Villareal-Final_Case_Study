@@ -1,0 +1,48 @@
+---
+  - name: Configure Extended ACL
+    hosts: Caloocan
+    gather_facts: false
+    connection: local
+    vars:
+      cli:
+        username: cisco
+        password: cisco123!
+
+    tasks:
+      - name: Allow only PC1 network
+        ios_config:
+          provider: "{{ cli }}"
+          lines:
+            - 10 deny icmp host 192.168.200.3 any
+            - 20 permit ip any any
+          parents: ip access-list extended ACL-PC1
+          #before: no ip access-list extended ACL-CALOOCAN
+
+      - name: Apply in F0/0
+        ios_config:
+          provider: "{{ cli }}"
+          parents: interface f0/0
+          lines:
+            - ip access-group ACL-PC1 out
+      
+      - name: display extended ACL
+        ios_command:
+          provider: "{{ cli }}"
+          commands:
+            - show ip access-list ACL-PC1
+        register: config
+
+      - name: SAVE OUTPUT TO ./iosconfig/
+        copy:
+          content: "{{config.stdout[0]}}"
+          dest: "iosconfig/show_extended_ACL_{{inventory_hostname}}.txt"
+
+      - name: Save Configuration
+        ios_config:
+          provider: "{{ cli }}"
+          lines:
+            - do write
+
+      
+
+          

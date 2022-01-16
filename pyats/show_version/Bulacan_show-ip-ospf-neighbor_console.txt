@@ -1,0 +1,7 @@
++++ Bulacan: executing command 'show ip ospf neighbor' +++
+show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+192.168.200.1     0   FULL/  -        00:00:37    10.0.0.6        Serial1/1
+192.168.150.1     0   FULL/  -        00:00:35    10.0.0.1        Serial1/0
+Bulacan#

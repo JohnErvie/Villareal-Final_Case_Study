@@ -1,0 +1,27 @@
+{
+  "_exclude": [
+    "dead_time"
+  ],
+  "interfaces": {
+    "Serial1/0": {
+      "neighbors": {
+        "192.168.150.1": {
+          "address": "10.0.0.1",
+          "dead_time": "00:00:35",
+          "priority": 0,
+          "state": "FULL/  -"
+        }
+      }
+    },
+    "Serial1/1": {
+      "neighbors": {
+        "192.168.200.1": {
+          "address": "10.0.0.6",
+          "dead_time": "00:00:37",
+          "priority": 0,
+          "state": "FULL/  -"
+        }
+      }
+    }
+  }
+}

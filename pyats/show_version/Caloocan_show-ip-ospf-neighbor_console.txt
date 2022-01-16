@@ -1,0 +1,6 @@
++++ Caloocan: executing command 'show ip ospf neighbor' +++
+show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+10.0.0.5          0   FULL/  -        00:00:36    10.0.0.2        Serial1/0
+Caloocan#

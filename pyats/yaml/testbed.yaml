@@ -1,0 +1,40 @@
+devices:
+  Bulacan:
+    connections:
+      cli:
+        ip: 10.0.0.2
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco123!
+        username: cisco
+      enable:
+        password: '%ASK{}'
+    os: iosxe
+    type: iosxe
+  Caloocan:
+    connections:
+      cli:
+        ip: 192.168.150.1
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco123!
+        username: cisco
+      enable:
+        password: '%ASK{}'
+    os: iosxe
+    type: iosxe
+  QuezonCity:
+    connections:
+      cli:
+        ip: 10.0.0.6
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco123!
+        username: cisco
+      enable:
+        password: '%ASK{}'
+    os: iosxe
+    type: iosxe
